@@ -13,6 +13,15 @@ let wPatterns= [
 ]
 let winner = false;
 filledBox = 0;
+let dialogues = ["A: What are you so pressed about? (with care)",
+"kei vo?",
+"B: Just fuck off",
+"A: Just tell me what happened(again with more care)",
+"B: That's None of your business tbh",
+"A: 🤡🤡🤡🤡",
+"A: 🤡🤡🤡🤡",
+"A: 🤡🤡🤡🤡"
+]
 
 let xTurn = true;
 boxes.forEach((box)=>{
@@ -22,6 +31,7 @@ boxes.forEach((box)=>{
         box.innerText = "X";
         xTurn = false;
         box.disabled = true;
+        wText.innerText= dialogues[filledBox];
         checkWinner();
         drawCheck();
         console.log(filledBox)
@@ -30,6 +40,7 @@ boxes.forEach((box)=>{
         box.innerText = "O";
         xTurn = true;
         box.disabled = true;
+        wText.innerText= dialogues[filledBox];
         checkWinner();
         drawCheck();
         console.log(filledBox)
